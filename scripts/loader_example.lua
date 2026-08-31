@@ -1,17 +1,5 @@
 -- loader_example.lua
--- Demonstrates loading the remote module and running it.
-local url = "https://raw.githubusercontent.com/peristefedits-max/randomencounters/main/scripts/randomencounter.lua"
-local ok, chunk = pcall(function() return game:HttpGet(url) end)
-if not ok then error("HttpGet failed: " .. tostring(chunk)) end
-
-local ok2, moduleOrErr = pcall(loadstring, chunk)
-if not ok2 then error("loadstring failed: " .. tostring(moduleOrErr)) end
-
-local result = moduleOrErr()
-if type(result) == "table" and result.run then
-  result.run()
-elseif type(result) == "function" then
-  result()
-else
-  print("Loaded module doesn't expose run() or return a callable.")
-end
+-- REMOVED: this file was a duplicate of the loader functionality.
+-- Keeping a single canonical script at scripts/randomencounter.lua.
+-- If you want this file fully deleted instead of replaced with this note,
+-- tell me and I'll remove it (I can also rename/move files if you'd prefer).
